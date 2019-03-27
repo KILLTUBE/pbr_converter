@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 
 				if (w && w != nw)
 				{
-					printf("size mismatch! %s is %d pixels wide, expected %s", argv[i], nw, w);
+					printf("size mismatch! %s is %d pixels wide, expected %d", argv[i], nw, w);
 					return 0;
 				}
 				w = nw;
