@@ -7,7 +7,7 @@
 
 enum {
 	AO_TEX = 0,
-	DIFF_TEX,
+	//DIFF_TEX,
 	DISP_TEX,
 	NOR_TEX,
 	ROUGH_TEX,
@@ -17,7 +17,7 @@ enum {
 
 char *substrings[NUM_TEX_TYPES] = {
 	"_AO_",
-	"_diff_",
+	//"_diff_",
 	"_disp_",
 	"_nor_",
 	"_rough_",
@@ -75,12 +75,12 @@ int main(int argc, char *argv[])
 
 	newImage = malloc(w * h * 4);
 
-	if (datas[DIFF_TEX])
-	{
-		printf("writing output.png\n");
-		fflush(stdout);
-		stbi_write_png("output.png", w, h, 4, datas[DIFF_TEX], w * 4);
-	}
+	//if (datas[DIFF_TEX])
+	//{
+	//	printf("writing output.png\n");
+	//	fflush(stdout);
+	//	stbi_write_png("output.png", w, h, 4, datas[DIFF_TEX], w * 4);
+	//}
 
 	if (datas[NOR_TEX])
 	{
