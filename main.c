@@ -137,7 +137,8 @@ int main(int argc, char *argv[])
 		stbi_write_png("output_s.png", w, h, 4, newImage, w * 4);
 	}
 
-	printf("press enter to continue\n");
-	fflush(stdout);
-	getchar();
+	// todo: enable this when drag&drop was used, but how to detect?
+	//printf("press enter to continue\n");
+	//fflush(stdout);
+	//getchar();
 }
