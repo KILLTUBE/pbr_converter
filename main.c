@@ -44,8 +44,8 @@ int main(int argc, char *argv[])
 			if (strstr(argv[i], substrings[j]))
 			{
 				int nw, nh, c;
-				printf("loading %s\n", argv[i]);
-				fflush(stdout);
+				//printf("loading %s\n", argv[i]);
+				//fflush(stdout);
 				datas[j] = stbi_load(argv[i], &nw, &nh, &c, 4);
 
 				if (!datas[j])
@@ -75,6 +75,18 @@ int main(int argc, char *argv[])
 
 	newImage = malloc(w * h * 4);
 
+	if (!datas[AO_TEX])
+		printf("AO_TEX not found");
+	if (!datas[DISP_TEX])
+		printf("DISP_TEX not found");
+	if (!datas[NOR_TEX])
+		printf("NOR_TEX not found");
+	if (!datas[ROUGH_TEX])
+		printf("ROUGH_TEX not found");
+	if (!datas[SPEC_TEX])
+		printf("SPEC_TEX not found");
+	fflush(stdout);
+
 	//if (datas[DIFF_TEX])
 	//{
 	//	printf("writing output.png\n");
@@ -101,15 +113,15 @@ int main(int argc, char *argv[])
 				inHeight += 4;
 			}
 
-			printf("writing output_n.png\n");
-			fflush(stdout);
+			//printf("writing output_n.png\n");
+			//fflush(stdout);
 			stbi_write_png("output_n.png", w, h, 4, newImage, w * 4);
 		}
 		else
 		{
-			printf("writing output_n.png\n");
+			printf("DISP_TEX not found, not doing anything\n");
 			fflush(stdout);
-			stbi_write_png("output_n.png", w, h, 4, datas[NOR_TEX], w * 4);
+			//stbi_write_png("output_n.png", w, h, 4, datas[NOR_TEX], w * 4);
 		}
 	}
 
@@ -132,8 +144,8 @@ int main(int argc, char *argv[])
 			inAO += 4;
 		}
 
-		printf("writing output_s.png\n");
-		fflush(stdout);
+		//printf("writing output_s.png\n");
+		//fflush(stdout);
 		stbi_write_png("output_s.png", w, h, 4, newImage, w * 4);
 	}
 
